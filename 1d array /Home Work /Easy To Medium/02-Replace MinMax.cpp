@@ -25,18 +25,19 @@ int main() {
         }
 
         int minVal = a[0], maxVal = a[0];
-        int minIdx = 0, maxIdx = 0;
-
+        
         for (int i = 0; i < n; ++i) {
             if (a[i] < minVal)
-                minVal = a[i], minIdx = i;
+                minVal = a[i];
             else if (a[i] > maxVal)
-                maxVal = a[i], maxIdx = i;
+                maxVal = a[i];
         }
-
-        swap(a[minIdx], a[maxIdx]);
-
         for (int i = 0; i < n; ++i) {
+            if(a[i]==minVal)
+                a[i]=maxVal;
+            else if (a[i] == maxVal)
+                a[i]=minVal;
+            
             cout<<a[i]<<' ';
         }
     }
