@@ -1,4 +1,4 @@
-*
+/*
  * Problem #2: Fixed sliding window
 ● Read Integers K and N, (where K <= N). then read N < 200 integers.
 ● Find sub-array (consecutive numbers) of K elements that has maximum sum
@@ -45,3 +45,34 @@ int main() {
         cout << ans << ' ' << l << ' ' << r;
 
     }
+
+
+
+
+/*********************************************************/
+
+/*
+
+        int n, k;
+        cin >> n >> k;
+
+        int a[n];
+        for (int i = 0; i < n; ++i) {
+            cin >> a[i];
+        }
+        
+        int maxSum=0 , minIndx=0;
+
+        for (int i = 0; i < k; ++i) {
+            maxSum+=a[i];
+        }
+        int sum=maxSum;
+
+        for (int i = k; i < n; ++i) {
+            sum=sum-a[i-k] + a[i];
+            if (sum>maxSum)
+                maxSum=sum , minIndx =i-(k-1);
+        }
+        
+        cout<<minIndx <<" "<<minIndx+k -1 <<' '<<maxSum<<endl;
+*/
